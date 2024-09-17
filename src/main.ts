@@ -4,8 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
-
-    /* const options = new DocumentBuilder()
+    const options = new DocumentBuilder()
       .setTitle('Poke Api')
       .setDescription('Api for return pokemons informations')
       .setVersion('1.0')
@@ -14,7 +13,7 @@ async function bootstrap() {
       .build();
   
     const document = SwaggerModule.createDocument(app, options);
-    SwaggerModule.setup('api-docs', app, document); */
+    SwaggerModule.setup('api-docs', app, document);
 
     await app.listen(3000);
 }

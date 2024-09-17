@@ -5,11 +5,10 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
     const options = new DocumentBuilder()
-      .setTitle('Poke Api')
+      .setTitle('Poke App')
       .setDescription('Api for return pokemons informations')
       .setVersion('1.0')
       .addServer('http://localhost:3000/', 'Local environment')
-      .addServer('https://poke-api-lilac-tau.vercel.app', 'Staging')
       .build();
   
     const document = SwaggerModule.createDocument(app, options);

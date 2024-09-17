@@ -90,8 +90,8 @@ This endpoint return a list of pokemon
     }
 ```
 
-# /api/pokemonAndTypes/:id
-This endpoint return a pokemon with types and translations for spanish and japanese
+# /api/pokemon/:id
+This endpoint return a pokemon with types
 
 # Method
 - GET 
@@ -116,7 +116,7 @@ This endpoint return a pokemon with types and translations for spanish and japan
 ```
 
 # /api/pokemonAndTypes/:id
-This endpoint return a pokemon with types
+This endpoint return a pokemon with types and translations for spanish and japanese
 
 # Method
 - GET 

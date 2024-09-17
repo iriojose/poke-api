@@ -58,6 +58,128 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Endpoints
+
+# /api/pokemon 
+This endpoint return a list of pokemon
+
+# Method
+- GET
+
+# Response
+```json 
+    {
+        "results": [
+            {
+                "name": "stench",
+                "url": "https://pokeapi.co/api/v2/ability/1/"
+            },
+            {
+                "name": "drizzle",
+                "url": "https://pokeapi.co/api/v2/ability/2/"
+            },
+            {
+                "name": "speed-boost",
+                "url": "https://pokeapi.co/api/v2/ability/3/"
+            },
+            {
+                "name": "battle-armor",
+                "url": "https://pokeapi.co/api/v2/ability/4/"
+            },
+        ]
+    }
+```
+
+# /api/pokemonAndTypes/:id
+This endpoint return a pokemon with types and translations for spanish and japanese
+
+# Method
+- GET 
+
+# Parameters
+- **id**: representation of pokemon by id o name : `{ "id": "string" }`
+  
+# Response
+```json 
+    {
+        "name": "caterpie",
+        "types": [
+            {
+                "slot": 1,
+                "type": {
+                    "name": "bug",
+                    "url": "https://pokeapi.co/api/v2/type/7/"
+                }
+            }
+        ]
+    }
+```
+
+# /api/pokemon/:id
+This endpoint return a pokemon with types
+
+# Method
+- GET 
+
+# Parameters
+- **id**: representation of pokemon by id o name : `{ "id": "string" }`
+
+# Response
+```json 
+    {
+        "name": "butterfree",
+        "types": [
+            {
+                "slot": 1,
+                "type": {
+                    "name": "bug",
+                    "url": "https://pokeapi.co/api/v2/type/7/"
+                },
+                "names": [
+                    {
+                        "language": {
+                            "name": "es",
+                            "url": "https://pokeapi.co/api/v2/language/7/"
+                        },
+                        "name": "Bicho"
+                    },
+                    {
+                        "language": {
+                            "name": "ja",
+                            "url": "https://pokeapi.co/api/v2/language/11/"
+                        },
+                        "name": "むし"
+                    }
+                ]
+            },
+            {
+                "slot": 2,
+                "type": {
+                    "name": "flying",
+                    "url": "https://pokeapi.co/api/v2/type/3/"
+                },
+                "names": [
+                    {
+                        "language": {
+                            "name": "es",
+                            "url": "https://pokeapi.co/api/v2/language/7/"
+                        },
+                        "name": "Volador"
+                    },
+                    {
+                        "language": {
+                            "name": "ja",
+                            "url": "https://pokeapi.co/api/v2/language/11/"
+                        },
+                        "name": "ひこう"
+                    }
+                ]
+            }
+        ]
+    }
+```
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).

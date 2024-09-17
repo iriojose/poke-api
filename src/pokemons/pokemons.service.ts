@@ -13,7 +13,7 @@ export class PokemonsService {
 
     async getAllPokemons(): Promise<GenericType[]> {
         try {
-            const response = await axios.get(`${this.url}ability/?limit=100`)
+            const response = await axios.get(`${this.url}pokemon/?limit=100`)
             return response.data.results
         }catch (e) {
             throw new HttpException('getAllPokemons PokemonsService error:' + e, e.status)

@@ -13,7 +13,7 @@ export class PokemonsService {
 
     async getAllPokemons(): Promise<GenericType[]> {
         try {
-            const response = await axios(`${this.url}ability/?limit=100`)
+            const response = await axios.get(`${this.url}ability/?limit=100`)
             return response.data.results
         }catch (e) {
             throw new HttpException('getAllPokemons PokemonsService error:' + e, e.status)
@@ -22,17 +22,16 @@ export class PokemonsService {
 
     async getOnePokemon(id: string): Promise<GetPokemonResponseDTO> {
         try {
-            const response = await axios(`${this.url}pokemon/${id}`)
+            const response = await axios.get(`${this.url}pokemon/${id}`)
             return { name: response.data.name, types: response.data.types }
         }catch (e) {
-            console.log(e)
             throw new HttpException('getAllPokemons PokemonsService error:' + e, e.status)
         }
     }   
 
     async getTypeTranslation(url: string): Promise<Names[]>  {
         try {
-            const response = await axios(url)
+            const response = await axios.get(url)
             return response.data.names.filter((name) => name.language.name == "es" || name.language.name == "ja")
         } catch(e) {
             throw new HttpException('getTypeTranslation PokemonsService error: '+ e, e.status)

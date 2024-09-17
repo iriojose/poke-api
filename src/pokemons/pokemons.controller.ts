@@ -4,7 +4,7 @@ import { Response } from 'express';
 import { PokemonsService } from './pokemons.service';
 import { ListOfPokemonsResponseDTO } from './dtos/listOfPokemonResponse.dto';
 import { GetPokemonResponseDTO } from './dtos/getPokemonResponse.dto';
-import { HttpErrorException } from 'src/http/http.exception';
+import { HttpErrorException } from '../http/http.exception';
 
 @Controller('api')
 @ApiTags("pokemons")

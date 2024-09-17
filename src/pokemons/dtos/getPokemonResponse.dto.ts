@@ -14,4 +14,10 @@ export class GetPokemonResponseDTO {
         required: true
     })
     types: Types[]
+
+    @ApiProperty({
+        example: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/10.svg",
+        required: true
+    })
+    image: string
 }

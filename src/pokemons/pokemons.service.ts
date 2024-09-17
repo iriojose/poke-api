@@ -23,7 +23,7 @@ export class PokemonsService {
     async getOnePokemon(id: string): Promise<GetPokemonResponseDTO> {
         try {
             const response = await axios.get(`${this.url}pokemon/${id}`)
-            return { name: response.data.name, types: response.data.types }
+            return { name: response.data.name, types: response.data.types, image: response.data.sprites.other.dream_world.front_default }
         }catch (e) {
             throw new HttpException('getAllPokemons PokemonsService error:' + e, e.status)
         }

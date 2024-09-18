@@ -14,7 +14,10 @@ async function bootstrap() {
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('api-docs', app, document);
 
-    app.enableCors()
+    app.enableCors({
+      origin: ['https://pokedex-eight-theta-14.vercel.app'],
+      methods: 'GET, PUT, POST',
+    })
     await app.listen(3000);
 }
 bootstrap();

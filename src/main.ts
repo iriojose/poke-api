@@ -4,6 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
+
     const options = new DocumentBuilder()
       .setTitle('Poke App')
       .setDescription('Api for return pokemons informations')
@@ -14,10 +15,7 @@ async function bootstrap() {
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('api-docs', app, document);
 
-    app.enableCors({
-      origin: ['https://pokedex-eight-theta-14.vercel.app'],
-      methods: 'GET, PUT, POST',
-    })
+    app.enableCors()
     await app.listen(3000);
 }
 bootstrap();
